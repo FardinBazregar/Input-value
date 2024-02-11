@@ -14,6 +14,10 @@ const Input = ({ value, onChange }) => {
 };
 function App() {
   const [input, setInput] = useState("");
+  const [btn, setBtn] = useState(false);
+  const btnHandler = () => {
+    setBtn(!btn);
+  };
   return (
     <div>
       <Input
@@ -22,7 +26,8 @@ function App() {
           setInput(value);
         }}
       />
-
+      <button onClick={btnHandler}>Show</button>
+      {btn ? <h1>{input}</h1> : null}
       <Input
         value={input}
         onChange={(value) => {
