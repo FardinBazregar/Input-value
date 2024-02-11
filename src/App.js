@@ -26,7 +26,7 @@ function App() {
           setInput(value);
         }}
       />
-      <button onClick={btnHandler}>Show</button>
+      <button onClick={btnHandler}>{btn ? "Hide" : "Show"}</button>
       {btn ? <h1>{input}</h1> : null}
       <Input
         value={input}
